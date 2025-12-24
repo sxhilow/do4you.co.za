@@ -1,1 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+  --font-base: "Poppins", sans-serif;
+
+
+  --color-surface: #f4f3ee;
+  --color-primary-blue: #4381c1;
+  --color-accent-green: #37d193;
+  --color-neutral: #1f2421;
+
+
+  --color-primary-blue-50: #ecf2f9;
+  --color-primary-blue-100: #c5d8ec;
+  --color-primary-blue-200: #a9c5e2;
+  --color-primary-blue-300: #81abd5;
+  --color-primary-blue-400: #699acd;
+  --color-primary-blue-500: #4381c1;
+  --color-primary-blue-600: #3d75b0;
+  --color-primary-blue-700: #305c89;
+  --color-primary-blue-800: #25476a;
+  --color-primary-blue-900: #1c3651;
+
+
+  --color-accent-green-50: #ebfaf4;
+  --color-accent-green-100: #c1f1de;
+  --color-accent-green-200: #a3eacd;
+  --color-accent-green-300: #79e0b7;
+  --color-accent-green-400: #5fdaa9;
+  --color-accent-green-500: #37d193;
+  --color-accent-green-600: #32be86;
+  --color-accent-green-700: #279468;
+  --color-accent-green-800: #1e7351;
+  --color-accent-green-900: #17583e;
+
+
+
+  --color-neutral-1: #ffffff;
+  --color-neutral-2: #fdfdfd;
+  --color-neutral-3: #f6f6f6;
+  --color-neutral-4: #f2f2f2;
+  --color-neutral-5: #dddede;
+  --color-neutral-6: #c7c8c8;
+  --color-neutral-7: #9a9c9b;
+  --color-neutral-8: #6d716f;
+  --color-neutral-9: #5b5f5d;
+  --color-neutral-10: #414542;
+  --color-neutral-11: #3a3e3c;
+  --color-neutral-12: #313633;
+  --color-neutral-13: #1f2421;
+
+
+  --text-desktop-h1: 80px;
+  --text-desktop-h2: 56px;
+  --text-desktop-h3: 40px;
+  --text-desktop-h4: 32px;
+  --text-desktop-h5: 24px;
+  --text-desktop-h6: 20px;
+  --text-desktop-body: 18px;
+  --text-desktop-small: 15px;
+
+
+  --text-mobile-h1: 40px;
+  --text-mobile-h2: 32px;
+  --text-mobile-h3: 28px;
+  --text-mobile-h4: 22px;
+  --text-mobile-h5: 18px;
+  --text-mobile-h6: 16px;
+  --text-mobile-body: 16px;
+  --text-mobile-small: 14px;
+
+}
+
+body{
+    background-color: var(--color-surface);
+    font-family: var(--font-base);
+}
