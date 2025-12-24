@@ -1,5 +1,7 @@
 ---
 import { Image } from "astro:assets";
+import Button from "../ui/Button.astro";
+import Bullet from "../../assets/icons/Bullet.svg"
 
 const {
     logo,
@@ -9,23 +11,53 @@ const {
 } = Astro.props
 ---
 
-<footer class="max-w-6xl mx-auto py-24 max-md:py-20">
+<footer class="max-w-7xl mx-auto py-24 max-md:py-20 ">
 
-    <div>
-        <Image
-            src={logo.src}
-            alt={logo.alt}
-        />
+    <div class="flex max-md:flex-col max-md:gap-8 justify-between items-start">
+        <div class="flex flex-col gap-2">
+            <Image
+                src={logo.src}
+                alt={logo.alt}
+            />
+
+            <span class="md:max-w-lg text-desktop-small font-light">
+                {tagline}
+            </span>
+
+        </div>
+        
+
+        <ul>
+            {
+                quickLinks.map((item:any) => (
+                    <li class="text-desktop-body text-neutral">
+                        <Button to={item.href} label={item.label} classes="hover:text-primary-blue cursor-pointer flex items-center gap-2"  iconPosition="left">
+                            <Image
+                                src={Bullet}
+                                alt="Bullet"
+                                slot={"icon"}
+                                class="w-2 h-2"
+                            />
+                        </Button>
+                    </li>
+                ))
+            }
+        </ul>
     </div>
 
-    <div class="flex max-md:flex-col justify-between text-bg font-light">
-        <span>
-            {tagline}
-        </span>
+    <div class="mt-10">
+        <hr class="text-neutral-5">
 
-        <span class="max-md:mt-10">
-            {copyright}
-        </span>
+        <p class="block text-neutral-8 text-sm font-light text-center">** Do4You is not affiliated with VFS or Home Affairs. Services are for guidance and form assistance only. **</p>
+
+        <div class="mt-6 flex justify-between items-center text-neutral-10 text-desktop-small font-light">
+            <p>&copy {copyright}</p>
+            <p class="">
+                <Button to="/termcondition" label="Terms & Conditions" classes="hover:text-neutral-7 cursor-pointer"/>
+                |
+                <Button to="/privacypolicy" label="Privacy Policy" classes="hover:text-neutral-7 cursor-pointer"/>
+            </p>
+        </div>
     </div>
     
 </footer>

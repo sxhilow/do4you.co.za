@@ -2,9 +2,12 @@
 import "../styles/global.css"
 
 import siteData from "../data/siteData.json"
+
 import Header from "../components/chrome/Header.astro";
+import { headerData, footerData } from "../data/layout";
+
 import Footer from "../components/chrome/Footer.astro"
-import Seo from "../components/seo/Seo.astro";
+import SEO from "../components/seo/SEO.astro";
 
 const {
 	title = siteData.title,
@@ -26,7 +29,7 @@ const {
 
 		
 
-		<Seo 
+		<SEO 
 			{title}
 			{description}
 			url = {Astro.url}
@@ -36,8 +39,8 @@ const {
 	</head>
 	<body class="">
 
-		<div id="navbar" class="px-5 sticky top-0 left-0 w-full z-50 transition duration-150">
-			<Header/>
+		<div id="navbar" class="fixed top-0 left-0 w-full z-50 transition duration-150">
+			<Header {...headerData}/>
 		</div>
 		
 
@@ -45,8 +48,8 @@ const {
 				<slot />
 			</main>
 		
-		<div class="bg-neutral px-5">
-			<Footer/>
+		<div class="px-5">
+			<Footer {...footerData}/>
 		</div>
 
 		<!-- header bg -->
@@ -55,9 +58,9 @@ const {
 
 			window.addEventListener("scroll", () => {
 				if(window.scrollY > 10){
-					navbar.classList.add("bg-bg", "shadow-sm")
+					navbar.classList.add("bg-surface", "shadow-sm")
 				}else{
-					navbar.classList.remove("bg-bg", "shadow-sm")
+					navbar.classList.remove("bg-surface", "shadow-sm")
 				}
 			})
 		</script>

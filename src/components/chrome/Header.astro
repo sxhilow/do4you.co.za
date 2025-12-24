@@ -9,7 +9,7 @@ const {
 } = Astro.props
 ---
 
-<header class="max-w-6xl mx-auto py-6 flex justify-between items-center">
+<header id="header" class="max-w-7xl mx-auto py-6 flex justify-between items-center px-5 ">
 
     <div class="flex-1">
         <a href="/#">
@@ -27,7 +27,7 @@ const {
                 <Button 
                 href={item.href} 
                 label={item.label} 
-                classes="text-neutral font-light uppercase hover:text-primary-orange"
+                classes="text-neutral13 font-light uppercase hover:text-primary-blue"
                 underlineAnimation="true"
                 data-activeLink 
                 />
@@ -36,18 +36,21 @@ const {
     </nav>
 
 
-    <div class="flex-1 flex justify-end ">
+    <div class="flex-1 flex justify-end">
         <Button
         href={cta.href}
         label={cta.label}
         iconPosition="left"
-        classes="rounded-full px-6 py-3 flex justify-center items-center gap-2 bg-neutral text-neutral2 max-md:hidden hover:bg-neutral/90"
+        classes="rounded-lg px-5 py-3 flex justify-center items-center gap-2 bg-primary-blue text-surface max-md:hidden hover:bg-primary-blue-900"
         >
-            <Image 
-            src={cta.icon.src}
-            alt={"Call"}
-            slot={"icon"}
-            />
+            {cta?.icon?.src && (
+                <Image
+                    src={cta.icon.src}
+                    alt={cta.icon.alt ?? "icon"}
+                    slot="icon"
+                />
+            )}
+
         </Button>
     </div>
 
@@ -58,69 +61,102 @@ const {
                 id="menu-icon"
                 src={cta?.menuIcon?.src}
                 alt="menu"
-                class="w-10 h-10"
+                class="w-10 h-10 "
             />
             <Image
                 id="close-icon"
-                src={cta?.crossIcon?.src}
+                src={cta?.closeIcon?.src}
                 alt="close"
                 class="hidden w-6 h-6"
             />
         </button>
 
-        <nav id="mobile-menu" class="hidden bg-bg z-50 left-0 w-full h-screen absolute px-5 mt-2 transform transition-transform translate-y-full duration-500">
-            <ul class=" mt-10 space-y-3">
 
+        <nav 
+            id="mobile-menu"
+            class="hidden bg-surface z-50 left-0 w-full h-screen absolute px-5 mt-2"
+            >
+            <ul class="mt-10 space-y-3">
                 {
-                    navItems.map((item:any) => (
-                        <a href={item.href} class="group uppercase">
-                            <li class="py-3">
-                                {item.label}
-                            </li>
-                        </a>
-                    ))
+                navItems.map((item:any) => (
+                    <a href={item.href} class="group uppercase">
+                    <li class="py-3">
+                        {item.label}
+                    </li>
+                    </a>
+                ))
                 }
-
                 <li class="mt-5">
                     <Button
                         href={cta.href}
                         label={cta.label}
                         iconPosition="left"
-                        classes="rounded-full w-full py-3 flex justify-center items-center gap-2 bg-neutral text-neutral2 hover:bg-neutral/90"
+                        classes="rounded-lg px-5 py-3 flex justify-center items-center gap-2 bg-primary-blue text-surface hover:bg-primary-blue-900"
                     >
-                        <Image 
-                        src={cta.icon.src}
-                        alt={"Call"}
-                        slot={"icon"}
+                        {cta?.icon?.src && (
+                        <Image
+                            src={cta.icon.src}
+                            alt={cta.icon.alt ?? "icon"}
+                            slot="icon"
                         />
+                        )}
                     </Button>
                 </li>
-
             </ul>
-            
-            
         </nav>
 
+
     </div>
+
+   
 
 </header>
 
 <script is:inline>
-  const header = document.currentScript.closest("header");
 
-  const menuBtn = header.querySelector("[data-menu-btn]");
-  const mobileMenu = header.querySelector("[data-mobile-menu]");
-  const menuIcon = header.querySelector("[data-menu-icon]");
-  const closeIcon = header.querySelector("[data-close-icon]");
+    const menuBtn = document.getElementById("menu-btn")
+    const mobileMenu = document.getElementById("mobile-menu")
+    const menuIcon = document.getElementById("menu-icon")
+    const closeIcon = document.getElementById("close-icon")
+    const header = document.getElementById("header")
 
-  menuBtn?.addEventListener("click", () => {
-    const open = mobileMenu.classList.contains("hidden");
+    function toggleMobileMenu(show){
+        if(show){
+            // OPEN
+            mobileMenu.classList.remove("hidden");
 
-    mobileMenu.classList.toggle("hidden", !open);
-    mobileMenu.classList.toggle("translate-y-full", !open);
-    menuIcon?.classList.toggle("hidden", open);
-    closeIcon?.classList.toggle("hidden", !open);
+            menuIcon.classList.add("hidden");
+            closeIcon.classList.remove("hidden");
 
-    document.body.classList.toggle("overflow-hidden", open);
-  });
+            header.classList.add("bg-surface")
+
+            document.body.classList.add("overflow-hidden")
+
+        } else {
+            
+            mobileMenu.classList.add("hidden");
+
+            menuIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+
+            header.classList.remove("bg-surface")
+
+            document.body.classList.remove("overflow-hidden")
+        }
+    }
+
+    menuBtn.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.contains("hidden");
+            toggleMobileMenu(isHidden);
+        } 
+    )
+
+    document.querySelectorAll("#mobile-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+            toggleMobileMenu(false);
+        })
+
+        
+    })
+
 </script>
