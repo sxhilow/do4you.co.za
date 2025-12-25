@@ -1,10 +1,11 @@
 ---
 import ServiceCard from "../ui/ServiceCard.astro";
 import { services } from "../../data/services";
+import Button from "../ui/Button.astro";
 
 ---
 
-<section id="services" class="max-w-7xl mx-auto w-full px-5 my-17 md:my-36 space-y-6 md:space-y-11">
+<section id="services" class="max-w-7xl mx-auto w-full px-5 mt-17 md:mt-36 space-y-6 md:space-y-11 scroll-mt-26">
 
     <h1 class="text-neutral text-mobile-h3 md:text-desktop-h3 font-medium max-sm:leading-tight">What we help you with</h1>
 
@@ -21,6 +22,21 @@ import { services } from "../../data/services";
         }
     </div>
 
+    <div class="w-full p-7 md:p-10 bg-radial-accent rounded-2xl text-center space-y-6">
+
+        <div class="text-mobile-h3 md:text-desktop-h3 max-w-xl mx-auto leading-8 md:leading-12 font-medium">
+            Not sure which <span class="text-primary-blue-600 font-bold">visa</span> applies to your situation?
+        </div>
+
+        <div>
+            <Button
+                href="#contact"
+                label="Get help choosing the right visa"
+                classes="rounded-full text-center px-5 py-3 gap-2 bg-primary-blue text-surface hover:bg-primary-blue-900 cursor-pointer text-mobile-h6 md:text-desktop-h6"
+            />
+        </div>
+
+    </div>
 
 
 </section>

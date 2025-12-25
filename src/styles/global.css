@@ -77,3 +77,11 @@ body{
     background-color: var(--color-surface);
     font-family: var(--font-base);
 }
+
+.bg-radial-accent{
+  background: radial-gradient(
+    circle at center,
+    theme(--color-surface) 15%,
+    theme(--color-accent-green-300) 80%
+  );
+}
