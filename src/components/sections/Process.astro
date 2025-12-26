@@ -1,0 +1,147 @@
+---
+import { Image } from "astro:assets";
+import { process } from "../../data/process";
+---
+<section
+  id="process"
+  class="relative max-w-7xl mx-auto w-full px-5 mt-17 md:mt-36 scroll-mt-26"
+>
+  <h1 class="text-neutral max-w-2xl text-mobile-h3 md:text-desktop-h3 font-medium leading-tight">
+    A simple process that actually makes sense
+  </h1>
+  
+  <!-- STICKY DISPLAY (ONE ONLY) -->
+  <div class="sticky top-32 min-h-[70vh] h-auto flex max-md:flex-col lg:items-center gap-4 md:gap-14 mt-6 lg:mt-11 ">
+    
+   
+    <!-- Image -->
+    <div class="relative rounded-lg">
+        {process.map((item, i) => (
+            <Image
+            data-process-image={i}
+            src={item.image}
+            alt=""
+            class:list={[
+                "object-cover rounded-lg lg:max-w-155 transition-opacity duration-300",
+                i === 0 ? "opacity-100" : "opacity-0 absolute inset-0"
+            ]}
+            />
+        ))}
+    </div>
+        
+    <!-- Timeline -->
+    <div id="timeline" class="max-md:hidden flex md:flex-col items-center">
+        {process.map((_, i) => (
+            <>
+                <div
+                    data-dot={i}
+                    class:list={[
+                    "w-12 h-12 md:w-18 md:h-18 rounded-full flex items-center justify-center transition-colors duration-300",
+                    i === 0 ? "bg-primary-blue-500" : "border border-primary-blue-500"
+                    ]}
+                >
+                    <span class:list={[
+                    "text-mobile-h4 md:text-desktop-h4",
+                    i === 0 ? "text-surface" : "text-primary-blue-900"
+                    ]}>
+                        {i + 1}
+                    </span>
+                </div>
+                {i < process.length - 1 && (
+                    <div class="h-0.5 w-12 md:w-0.5 md:h-32 bg-primary-blue-500"></div>
+                )}
+            </>
+        ))}
+    </div>
+
+    
+    <!-- Content -->
+    <div
+      id="process-content"
+      class="text-neutral space-y-3 md:space-y-8 font-light transition-opacity duration-300"
+    >
+      <h2 class="text-mobile-h3 md:text-desktop-h3 font-semibold leading-7 md:leading-12">
+        {process[0].title}
+      </h2>
+      <p class="text-mobile-h5 md:text-desktop-h5">
+        {process[0].description}
+      </p>
+    </div>
+
+  </div>
+  
+  <!-- SCROLL TRIGGERS (NO CONTENT) -->
+    <div class="relative -mt-[70vh]">
+    {process.map((_, i) => (
+        <div data-step={i} class="h-screen"></div>
+    ))}
+    </div>
+  
+  <!-- DATA FOR JS -->
+  <script id="process-data" type="application/json" set:html={JSON.stringify(process)} />
+</section>
+
+<script>
+    const steps = document.querySelectorAll<HTMLElement>("[data-step]")
+    const dots = document.querySelectorAll<HTMLElement>("[data-dot]")
+    const images = document.querySelectorAll<HTMLElement>("[data-process-image]")
+    const content = document.getElementById("process-content")
+    const dataElement = document.getElementById("process-data")
+
+    if (!content || !dataElement?.textContent) {
+    console.error("Required elements not found")
+    throw new Error("Process section elements missing")
+    }
+
+    const data = JSON.parse(dataElement.textContent)
+    let activeStep = 0
+
+    function setStep(index: number) {
+    if (index === activeStep || !content) return
+    
+    // Fade out current
+    images[activeStep]?.classList.add("opacity-0")
+    content.classList.add("opacity-0")
+    
+    setTimeout(() => {
+        if (!content) return
+        
+        const h2 = content.querySelector("h2")
+        const p = content.querySelector("p")
+        
+        if (h2) h2.textContent = data[index].title
+        if (p) p.textContent = data[index].description
+        
+        dots.forEach((dot, i) => {
+        dot.classList.toggle("bg-primary-blue-500", i <= index)
+        dot.classList.toggle("border", i > index)
+        
+        const span = dot.querySelector("span")
+        if (span) {
+            span.classList.toggle("text-surface", i <= index)
+            span.classList.toggle("text-primary-blue-900", i > index)
+        }
+        })
+        
+        // Fade in new
+        images[index]?.classList.remove("opacity-0")
+        content.classList.remove("opacity-0")
+        
+        activeStep = index
+    }, 300)
+    }
+
+    const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            const target = entry.target as HTMLElement
+            setStep(Number(target.dataset.step))
+        }
+        })
+    },
+    { threshold: 0.6 }
+    )
+
+    steps.forEach((el) => observer.observe(el))
+</script>
