@@ -1,0 +1,29 @@
+---
+import StarFilled from "../../assets/icons/StarFilled.svg";
+import StarOutline from "../../assets/icons/StarOutline.svg";
+
+const {
+    stars,
+    review,
+    name
+} = Astro.props;
+
+const MAX_STARTS = 5;
+---
+
+<div class="bg-accent-green-50 p-5 rounded-lg border border-accent-green-800 space-y-6">
+
+    <div class="flex itesm-center gap-1">
+        {Array.from({ length: MAX_STARTS }).map((_, i) => (
+            i < stars ? 
+            <StarFilled  /> : 
+            <StarOutline />
+        ))}
+    </div>
+
+    <div class="space-y-3">
+        <p class="text-desktop-body text-neutral">"{review}"</p>
+         <p class="text-desktop-h6 text-neutral font-medium">— {name}</p>
+    </div>
+
+</div>

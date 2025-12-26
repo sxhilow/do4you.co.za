@@ -1,0 +1,45 @@
+---
+import { reviews } from "../../data/reviews";
+import TestimonialCard from "../ui/TestimonialCard.astro";
+import { Image } from "astro:assets";
+import TestimonialImage from "../../assets/images/Testimonial.png";
+import Button from "../ui/Button.astro";
+---
+
+<section id="work" class="max-w-7xl mx-auto w-full px-5 mt-17 md:mt-36 space-y-6 md:space-y-11 scroll-mt-26">
+
+    <h1 class="text-neutral text-mobile-h3 max-w-2xl md:text-desktop-h3 font-medium leading-tight">People who were once confused, just like you</h1>
+
+    <div class="flex gap-11 ">
+        <div class="space-y-5 overflow-y-auto max-h-155 pr-3">
+            {
+                reviews.map((item) => (
+                    <TestimonialCard 
+                        stars={item.stars}
+                        review={item.review}
+                        name={item.name}
+                    />
+                ))
+            }
+        </div>
+
+        <div class="max-md:hidden flex shrink-0">
+            <Image
+                src={TestimonialImage}
+                alt="Reviews Image"
+                class="rounded-lg max-w-155 h-155 object-cover shadow"
+            />
+        </div>
+    </div>
+
+    <div class="w-full bg-accent-green-800 p-5 flex max-sm:flex-col gap-4 justify-between items-center rounded-lg">
+        <span class="max-sm:text-center leading-tight text-desktop-h5 text-surface font-light">You can be next. Get help with your visa application.</span>
+
+        <Button
+            href="#contact"
+            label="Start now"
+            classes="bg-surface text-accent-green-800 text-desktop-h6 font-light px-5 py-3 rounded-lg hover:bg-accent-green-50 transition-colors"
+        />
+    </div>
+
+</section>
