@@ -11,61 +11,70 @@ import { process } from "../../data/process";
   </h1>
   
   <!-- STICKY DISPLAY (ONE ONLY) -->
-  <div class="sticky top-32 min-h-[70vh] h-auto flex max-md:flex-col lg:items-center gap-4 md:gap-14 mt-6 lg:mt-11 ">
+  <div class="sticky top-32 min-h-[70vh] h-auto flex max-lg:flex-col gap-4 md:gap-14 mt-6 lg:mt-11 ">
     
    
-    <!-- Image -->
-    <div class="relative rounded-lg">
+    <!-- Image Column -->
+    <div class="relative w-full lg:w-auto flex-shrink-0">
+      <div
+        class="relative w-full h-[40vh] md:h-[50vh] lg:h-[620px] lg:w-[620px] lg:max-w-155 overflow-hidden rounded-lg"
+      >
         {process.map((item, i) => (
-            <Image
+          <Image
             data-process-image={i}
             src={item.image}
             alt=""
             class:list={[
-                "object-cover rounded-lg lg:max-w-155 transition-opacity duration-300",
-                i === 0 ? "opacity-100" : "opacity-0 absolute inset-0"
+              "absolute inset-0 w-full h-full object-cover transition-opacity duration-300",
+              i === 0 ? "opacity-100" : "opacity-0"
             ]}
-            />
+          />
         ))}
-    </div>
-        
-    <!-- Timeline -->
-    <div id="timeline" class="max-md:hidden flex md:flex-col items-center">
-        {process.map((_, i) => (
-            <>
-                <div
-                    data-dot={i}
-                    class:list={[
-                    "w-12 h-12 md:w-18 md:h-18 rounded-full flex items-center justify-center transition-colors duration-300",
-                    i === 0 ? "bg-primary-blue-500" : "border border-primary-blue-500"
-                    ]}
-                >
-                    <span class:list={[
-                    "text-mobile-h4 md:text-desktop-h4",
-                    i === 0 ? "text-surface" : "text-primary-blue-900"
-                    ]}>
-                        {i + 1}
-                    </span>
-                </div>
-                {i < process.length - 1 && (
-                    <div class="h-0.5 w-12 md:w-0.5 md:h-32 bg-primary-blue-500"></div>
-                )}
-            </>
-        ))}
+      </div>
     </div>
 
-    
-    <!-- Content -->
-    <div
-      id="process-content"
-      class="text-neutral space-y-3 md:space-y-8 font-light transition-opacity duration-300"
-    >
-      <h2 class="text-mobile-h3 md:text-desktop-h3 font-semibold leading-7 md:leading-12">
-        {process[0].title}
-      </h2>
-      <p class="text-mobile-h5 md:text-desktop-h5">
-        {process[0].description}
-      </p>
+
+        
+    <div class="flex gap-8 lg:gap-14 flex-1">
+      <!-- Timeline -->
+      <div id="timeline" class="max-md:hidden flex md:flex-col items-center">
+          {process.map((_, i) => (
+              <>
+                  <div
+                      data-dot={i}
+                      class:list={[
+                      "w-12 h-12 md:w-18 md:h-18 rounded-full flex items-center justify-center transition-colors duration-300",
+                      i === 0 ? "bg-primary-blue-500" : "border border-primary-blue-500"
+                      ]}
+                  >
+                      <span class:list={[
+                      "text-mobile-h4 md:text-desktop-h4",
+                      i === 0 ? "text-surface" : "text-primary-blue-900"
+                      ]}>
+                          {i + 1}
+                      </span>
+                  </div>
+                  {i < process.length - 1 && (
+                      <div class="h-0.5 w-12 md:w-0.5 md:h-20 xl:h-38 bg-primary-blue-500"></div>
+                  )}
+              </>
+          ))}
+      </div>
+
+      
+      <!-- Content -->
+      <div
+        id="process-content"
+        class="text-neutral space-y-3 md:space-y-8 font-light transition-opacity duration-300"
+      >
+        <h2 class="text-mobile-h3 md:text-desktop-h3 font-semibold leading-7 md:leading-12">
+          {process[0].title}
+        </h2>
+        <p class="text-mobile-h5 md:text-desktop-h5">
+          {process[0].description}
+        </p>
+      </div>
+      
     </div>
 
   </div>
