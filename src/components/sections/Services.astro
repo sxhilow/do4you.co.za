@@ -2,6 +2,7 @@
 import ServiceCard from "../ui/ServiceCard.astro";
 import { services } from "../../data/services";
 import Button from "../ui/Button.astro";
+import { whatsappData } from "../../data/Whatsapp"
 
 ---
 
@@ -30,9 +31,10 @@ import Button from "../ui/Button.astro";
 
         <div>
             <Button
-                href="#contact"
+                href={whatsappData.link}
                 label="Get help choosing the right visa"
                 classes="rounded-full text-center px-5 py-3 gap-2 bg-primary-blue text-surface hover:bg-primary-blue-900 cursor-pointer text-mobile-h6 md:text-desktop-h6"
+                target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"
             />
         </div>
 

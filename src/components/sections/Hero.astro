@@ -2,6 +2,7 @@
 import { Image } from "astro:assets"
 import Button from "../ui/Button.astro"
 import Whatsapp from "../../assets/icons/Whatsapp.svg"
+import { whatsappData } from "../../data/Whatsapp"
 ---
 
 <section id="#" class="bg-[url('/images/Hero2.png')] bg-cover bg-center bg-no-repeat h-screen pt-24">
@@ -20,14 +21,10 @@ import Whatsapp from "../../assets/icons/Whatsapp.svg"
 
         <div class="flex max-sm:flex-col md:justify-left md:items-center gap-2 md:gap-4">
 
-            <Button to="#process" label="See how it works" classes="rounded-lg text-center px-5 py-3 gap-2 bg-primary-blue text-surface hover:bg-primary-blue-900 cursor-pointer text-mobile-h6 md:text-desktop-h6"/>
+            <Button href="#process" label="See how it works" classes="rounded-lg text-center px-5 py-3 gap-2 bg-primary-blue text-surface hover:bg-primary-blue-900 cursor-pointer text-mobile-h6 md:text-desktop-h6"/>
                 
-            <Button to="#process" label="Contact on WhatsApp" classes="rounded-lg px-5 py-3 flex justify-center items-center gap-2 text-surface max-md:bg-accent-green-500 lg:text-accent-green-800 lg:border-2 lg:border-accent-green-600 hover:bg-accent-green-500 hover:text-surface cursor-pointer text-mobile-h6 md:text-desktop-h6" iconPosition="left">
-                <Image
-                    src={Whatsapp}
-                    alt={"Whatsapp"}
-                    slot={"icon"}
-                />
+            <Button href={whatsappData.link} label="Contact on WhatsApp" classes="rounded-lg px-5 py-3 flex justify-center items-center gap-2 text-surface bg-accent-green-500 hover:bg-accent-green-700 cursor-pointer text-mobile-h6 md:text-desktop-h6" iconPosition="left" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+                <Whatsapp slot={"icon"}/>
             </Button>
         </div>
 

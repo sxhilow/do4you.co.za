@@ -9,6 +9,9 @@ import { headerData, footerData } from "../data/layout";
 import Footer from "../components/chrome/Footer.astro"
 import SEO from "../components/seo/SEO.astro";
 
+import Whatsapp from "../assets/icons/Whatsapp.svg";
+import { whatsappData } from "../data/Whatsapp";
+
 const {
 	title = siteData.title,
 	description = siteData.description,
@@ -46,6 +49,15 @@ const {
 
 			<main class="flex flex-col min-h-screen"> 
 				<slot />
+				<a
+					href={whatsappData.link}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Chat with us on WhatsApp"
+					class="fixed bottom-5 right-5 bg-green-400 text-white p-3 md:p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 hover:scale-105 flex items-center justify-center md:bottom-10 md:right-10"
+					>
+					<Whatsapp />
+				</a>
 			</main>
 		
 		<div class="px-5">
