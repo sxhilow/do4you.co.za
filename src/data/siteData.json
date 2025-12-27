@@ -1,31 +1,33 @@
 {
-  "title": "Fayda Studio — Modern Web Development Agency",
-  "description": "We build fast, modern, conversion-focused websites and full-stack solutions using React, Next.js, and Astro. Web development agency based in South Africa.",
-  "keywords": "web development South Africa, website agency, React development, Next.js, Astro, conversion-focused websites, website design, design websites",
+  "title": "do4you — South African Visa & Permit Form Filling Assistance",
+  "description": "do4you helps tourists and foreigners in South Africa correctly complete visa, permit, and permanent residence forms. Avoid rejections caused by wrong categories or form errors — we focus purely on accurate form filling and document compliance.",
+  "keywords": "visa form filling South Africa, permit form assistance SA, Home Affairs forms help, visa application form errors, tourist visa extension form, permanent residence form South Africa, spousal visa form filling",
   "image": {
     "src": "/images/og-preview.png",
-    "alt": "Fayda Studio - Web Development Agency",
+    "alt": "do4you — Visa and Permit Form Filling Assistance in South Africa",
     "width": 1200,
     "height": 630
   },
   "company": {
-    "name": "Fayda Studio",
-    "legalName": "Fayda Studio (Pty) Ltd",
-    "founder": "Sahil Jada",
-    "foundingDate": "2025"
+    "name": "do4you",
+    "legalName": "do4you",
+    "foundingDate": "2024",
+    "location": "South Africa",
+    "industry": "Visa & Permit Form Filling Assistance"
   },
   "social": {
-    "twitter": "",
-    "linkedin": "",
-    "github": "",
-    "instagram": ""
+    "whatsapp": "https://wa.me/27812765709",
+    "twitter": ""
   },
   "services": [
-    "Website Development",
-    "E-commerce Solutions",
-    "Web Application Development",
-    "SEO Optimization",
-    "Website Maintenance",
-    "Performance Optimization"
+    "Visa & Permit Form Filling Assistance",
+    "Visitor Visa Form Completion",
+    "Study Permit Form Completion",
+    "Spousal Visa Form Completion",
+    "Spousal Visa with Work Form Completion",
+    "Visa Extension Form Assistance",
+    "Appeal Application Form Assistance",
+    "Permanent Residence Form Completion",
+    "Supporting Document Compliance Checks"
   ]
 }

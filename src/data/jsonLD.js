@@ -4,12 +4,17 @@ export default function jsonLDGenerator({
   url, 
   image,
   type = 'Organization', // Allow different types per page
-  services = ["Website Development",
-    "E-commerce Solutions",
-    "Web Application Development",
-    "SEO Optimization",
-    "Website Maintenance",
-    "Performance Optimization"], // Add services you offer
+  services = [
+      "Visa & Permit Form Filling Assistance",
+      "Visitor Visa Form Completion",
+      "Study Permit Form Completion",
+      "Spousal Visa Form Completion",
+      "Spousal Visa with Work Form Completion",
+      "Visa Extension Form Assistance",
+      "Appeal Application Form Assistance",
+      "Permanent Residence Form Completion",
+      "Supporting Document Compliance Checks"
+    ], // Add services you offer
   socialProfiles = [] // Social media URLs
 }) {
   
@@ -33,7 +38,7 @@ export default function jsonLDGenerator({
   if (services.length > 0 && type === 'Organization') {
     baseSchema.hasOfferCatalog = {
       "@type": "OfferCatalog",
-      "name": "Web Development Services",
+      "name": "Visa & Permit Form Filling Services",
       "itemListElement": services.map((service, index) => ({
         "@type": "Offer",
         "itemOffered": {
