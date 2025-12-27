@@ -1,6 +1,6 @@
-import Process1 from "../assets/images/Process1.png"
-import Process2 from "../assets/images/Process2.png"
-import Process3 from "../assets/images/Process3.png"
+import Process1 from "../assets/images/Process1.avif"
+import Process2 from "../assets/images/Process2.avif"
+import Process3 from "../assets/images/Process3.avif"
 
 export const process = [
     {

@@ -23,13 +23,20 @@ import { process } from "../../data/process";
           <Image
             data-process-image={i}
             src={item.image}
-            alt=""
+            alt={"Process image"}
             class:list={[
               "absolute inset-0 w-full h-full object-cover transition-opacity duration-300",
               i === 0 ? "opacity-100" : "opacity-0"
             ]}
+            width={620}
+            height={620}
+            sizes="(max-width: 768px) 90vw, 620px"
+            loading={i === 0 ? "eager" : "lazy"}
+            decoding="async"
+            sizes="(max-width: 768px) 100vw, 620px"
           />
         ))}
+
       </div>
     </div>
 
