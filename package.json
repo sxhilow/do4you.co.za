@@ -12,6 +12,7 @@
     "@fontsource/poppins": "^5.2.7",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.6",
+    "astro-sitemap": "^1.0.0",
     "tailwindcss": "^4.1.18"
   }
 }
