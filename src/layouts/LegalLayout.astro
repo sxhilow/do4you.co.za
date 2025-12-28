@@ -1,0 +1,44 @@
+---
+import "../styles/global.css"
+import Header from "../components/chrome/Header.astro";
+import Footer from "../components/chrome/Footer.astro";
+import { headerData, footerData } from "../data/layout";
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+
+    <style>
+        .underline {
+            text-decoration: underline;
+        }
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section-anchor {
+            scroll-margin-top: 20px;
+        }
+        .summary-box {
+            background-color: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
+    
+  </head>
+
+  <body class="bg-white text-neutral">
+    <Header {...headerData}/>
+
+    <main class="max-w-4xl mx-auto px-5 py-20 prose prose-neutral">
+      <slot />
+    </main>
+
+    <Footer {...footerData}/>
+  </body>
+</html>
