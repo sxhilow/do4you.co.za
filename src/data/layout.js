@@ -8,14 +8,14 @@ export const headerData = {
     alt: "do4you",
   },
   navItems: [
-    { href: "#", label: "Home" },
-    { href: "#services", label: "Services" },
-    { href: "#process", label: "Our Process" },
-    { href: "#work", label: "Work" },
+    { href: "/#", label: "Home" },
+    { href: "/#services", label: "Services" },
+    { href: "/#process", label: "Our Process" },
+    { href: "/#work", label: "Work" },
   ],
   cta: {
     label: "Contact us",
-    href: "#contact",
+    href: "/#contact",
     icon: {
       src: null,
       alt: "Call",
@@ -38,11 +38,11 @@ export const footerData = {
     tagline: "Assistance with visas and permit form fillings in South Africa. We help you choose the right visa, complete your forms, and prepare your documents correctly.",
     copyright: "2025 do4you. All rights Reserved",
     quickLinks: [
-      { href: "#", label: "Home" },
-      { href: "#services", label: "Services" },
-      { href: "#process", label: "Our Process" },
-      { href: "#contact", label: "Contact" },
-      { href: "#work", label: "Work" },
+      { href: "/#", label: "Home" },
+      { href: "/#services", label: "Services" },
+      { href: "/#process", label: "Our Process" },
+      { href: "/#contact", label: "Contact" },
+      { href: "/#work", label: "Work" },
     ]
 }
 

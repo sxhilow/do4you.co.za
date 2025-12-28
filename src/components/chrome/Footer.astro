@@ -31,7 +31,7 @@ const {
             {
                 quickLinks.map((item:any) => (
                     <li class="text-desktop-body text-neutral">
-                        <Button to={item.href} label={item.label} classes="hover:text-primary-blue cursor-pointer flex items-center gap-2"  iconPosition="left">
+                        <Button href={item.href} label={item.label} classes="hover:text-primary-blue cursor-pointer flex items-center gap-2"  iconPosition="left">
                             <Image
                                 src={Bullet}
                                 alt="Bullet"
@@ -53,9 +53,9 @@ const {
         <div class="mt-6 flex justify-between items-center text-neutral-10 text-desktop-small font-light">
             <p>&copy {copyright}</p>
             <p class="">
-                <Button to="/termcondition" label="Terms & Conditions" classes="hover:text-neutral-7 cursor-pointer"/>
+                <Button href="/terms" label="Terms & Conditions" classes="hover:text-neutral-7 cursor-pointer"/>
                 |
-                <Button to="/privacypolicy" label="Privacy Policy" classes="hover:text-neutral-7 cursor-pointer"/>
+                <Button href="/privacy" label="Privacy Policy" classes="hover:text-neutral-7 cursor-pointer"/>
             </p>
         </div>
     </div>
