@@ -9,8 +9,11 @@ const { title, description } = Astro.props;
 
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
     <meta name="description" content={description} />
+
 
 
     <style>
@@ -35,10 +38,13 @@ const { title, description } = Astro.props;
   <body class="bg-white text-neutral">
     <Header {...headerData}/>
 
-    <main class="max-w-4xl mx-auto px-5 py-20 prose prose-neutral">
+    <main class="max-w-4xl mx-auto px-5 sm:py-10 md:py-20 prose prose-neutral">
       <slot />
     </main>
 
-    <Footer {...footerData}/>
+    <div class="px-5">
+			<Footer {...footerData}/>
+		</div>
+
   </body>
 </html>
