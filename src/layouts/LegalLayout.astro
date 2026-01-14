@@ -3,6 +3,7 @@ import "../styles/global.css"
 import Header from "../components/chrome/Header.astro";
 import Footer from "../components/chrome/Footer.astro";
 import { headerData, footerData } from "../data/layout";
+import PostHog from "../components/integrations/posthog.astro";
 
 const { title, description } = Astro.props;
 ---
@@ -13,8 +14,7 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
     <meta name="description" content={description} />
-
-
+    <PostHog />
 
     <style>
         .underline {
@@ -43,8 +43,8 @@ const { title, description } = Astro.props;
     </main>
 
     <div class="px-5">
-			<Footer {...footerData}/>
-		</div>
+      <Footer {...footerData}/>
+    </div>
 
   </body>
 </html>

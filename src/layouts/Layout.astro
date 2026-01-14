@@ -8,6 +8,7 @@ import { headerData, footerData } from "../data/layout.js";
 
 import Footer from "../components/chrome/Footer.astro"
 import SEO from "../components/seo/SEO.astro";
+import PostHog from "../components/integrations/posthog.astro";
 
 import Whatsapp from "../assets/icons/Whatsapp.svg";
 import { whatsappData } from "../data/Whatsapp";
@@ -18,7 +19,6 @@ const {
 	image = siteData.image
 } = Astro.props;
 ---
-
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -31,7 +31,7 @@ const {
 		<meta name="description" content={description} />
 		<title>{title}</title>
 
-
+		
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-0HZ17V43ZW"></script>
 		<script>
@@ -50,7 +50,7 @@ const {
 			url = {Astro.url}
 			{image}
 		/>
-		
+		<PostHog />
 	</head>
 	<body class="">
 
@@ -91,6 +91,3 @@ const {
 		
 	</body>
 </html>
-
-
-
