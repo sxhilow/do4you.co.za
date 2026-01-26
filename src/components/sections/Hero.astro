@@ -1,13 +1,11 @@
 ---
-import Button from "../ui/Button.astro"
-import Whatsapp from "../../assets/icons/Whatsapp.svg"
-import { whatsappData } from "../../data/Whatsapp"
-import { Image } from "astro:assets"
+import Button from "../ui/Button.astro";
+import Whatsapp from "../../assets/icons/Whatsapp.svg";
+import { whatsappData } from "../../data/Whatsapp";
+import { Image } from "astro:assets";
 ---
 
 <section id="#" class="relative h-screen pt-24 overflow-hidden">
-
-
     <Image
         src="/images/Hero.webp"
         alt="Visa form filling assistance in South Africa"
@@ -17,31 +15,58 @@ import { Image } from "astro:assets"
         width="1920"
         height="1080"
     />
-    
 
-    <div class="relative max-w-7xl mx-auto mt-12 md:mt-38 h-full space-y-6 px-5">
-
-        <div class="max-w-4xl space-y-2">
-            <h1 class="text-mobile-h1 leading-12 md:text-desktop-h2 md:leading-14 font-semibold text-neutral">
-            Not sure which visa category applies to you? <span class="text-primary-blue-600">Let a trusted local partner handle it.</span>
-            </h1>
-            <p class="text-neutral text-mobile-h5 md:text-desktop-h5">
-                We take care of your visa forms and supporting documents, so you can focus on enjoying South Africa, not stressing over paperwork.
-            </p>
-        </div>
-
-        <div class="flex max-sm:flex-col md:justify-left md:items-center gap-2 md:gap-4">
-
-            <Button href="#process" label="See how it works" classes="rounded-lg text-center px-5 py-3 gap-2 bg-primary-blue text-surface hover:bg-primary-blue-900 cursor-pointer text-mobile-h6 md:text-desktop-h6"/>
-                
-            <Button href={whatsappData.link} label="Contact on WhatsApp" classes="rounded-lg px-5 py-3 flex justify-center items-center gap-2 text-surface bg-accent-green-500 hover:bg-accent-green-700 cursor-pointer text-mobile-h6 md:text-desktop-h6" iconPosition="left" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-                <Whatsapp slot={"icon"}/>
-            </Button>
-        </div>
-
-
-
+    <div
+        class="fixed top-0 w-full h-26 bg-linear-to-b from-surface/50 to-surface/0"
+    >
     </div>
 
+    <div
+        class="relative max-w-7xl mx-auto h-full px-5 py-22 md:py-12 flex flex-col justify-end"
+    >
+        <div class="flex flex-col gap-y-6">
+            <div
+                class="flex max-sm:flex-col max-sm:gap-2 justify-between items-start"
+            >
+                <div class="flex-3/4 max-w-4xl">
+                    <h1
+                        class="text-mobile-h1 leading-12 md:text-desktop-h2 md:leading-14 font-semibold text-surface"
+                    >
+                        Need help with your visa application forms? <span
+                            class="text-accent-green"
+                            >Let us handle it.
+                        </span>
+                    </h1>
+                </div>
 
+                <div class="flex-1/4 md:py-2">
+                    <p class="text-surface text-mobile-h5 md:text-desktop-h6">
+                        We take care of your visa forms and supporting
+                        documents, so you can focus on enjoying South Africa,
+                        not stressing over paperwork.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex max-sm:flex-col justify-left gap-2 md:gap-4">
+                <Button
+                    href="#process"
+                    label="See how it works"
+                    classes="rounded-lg text-center px-5 py-3 gap-2 bg-primary-blue text-surface hover:bg-primary-blue-900 cursor-pointer text-mobile-h6 md:text-desktop-h6"
+                />
+
+                <Button
+                    href={whatsappData.link}
+                    label="Contact on WhatsApp"
+                    classes="rounded-lg px-5 py-3 flex justify-center items-center gap-2 text-surface bg-accent-green-500 hover:bg-accent-green-700 cursor-pointer text-mobile-h6 md:text-desktop-h6"
+                    iconPosition="left"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat with us on WhatsApp"
+                >
+                    <Whatsapp slot={"icon"} />
+                </Button>
+            </div>
+        </div>
+    </div>
 </section>
