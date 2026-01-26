@@ -1,106 +1,129 @@
 ---
-import Mail from "../../assets/icons/Mail.svg"
-import Phone from "../../assets/icons/Phone.svg"
+import Mail from "../../assets/icons/Mail.svg";
+import Phone from "../../assets/icons/Phone.svg";
 ---
 
-<section id="contact" class="max-w-7xl mx-auto w-full px-5 mt-17 md:mt-36 space-y-6 md:space-y-11 scroll-mt-26">
+<section
+    id="contact"
+    class="max-w-7xl mx-auto w-full px-5 mt-17 md:mt-36 space-y-6 md:space-y-11 scroll-mt-26"
+>
+    <h1
+        class="text-neutral text-mobile-h3 max-w-2xl md:text-desktop-h3 font-medium leading-tight"
+    >
+        Talk to a real person before you make a mistake
+    </h1>
 
-    <h1 class="text-neutral text-mobile-h3 max-w-2xl md:text-desktop-h3 font-medium leading-tight">Talk to a real person before you make a mistake</h1>
-
-
-    <div class="flex rounded-xl border border-accent-green-900 overflow-hidden flex-col md:flex-row">
-
-       <div class="flex-1 relative flex flex-col items-center bg-accent-green-900 p-5 gap-11 overflow-hidden">
+    <div
+        class="flex rounded-xl border border-accent-green-900 overflow-hidden flex-col md:flex-row"
+    >
+        <div
+            class="flex-1 relative flex flex-col items-center bg-accent-green-900 p-5 gap-11 overflow-hidden"
+        >
             <span
                 class="max-sm:hidden absolute inset-0 flex items-center justify-center text-[200px] font-bold text-surface/5 tracking-[-0.08em] pointer-events-none select-none"
             >
                 do4you
             </span>
 
-            
             <div
                 class="absolute -bottom-45 -right-45 w-96 h-96 rounded-full bg-accent-green-800"
-            ></div>
+            >
+            </div>
 
-           
             <div class="relative z-10 text-center">
-                <h2 class="text-desktop-h4 text-surface leading-tight">Contact Information</h2>
+                <h2 class="text-desktop-h4 text-surface leading-tight">
+                    Contact Information
+                </h2>
                 <p class="text-desktop-body font-light text-surface">
-                Fill out the form and we’ll get back to you within 24 hours.
+                    Fill out the form and we’ll get back to you within 24 hours.
                 </p>
             </div>
 
             <div class="relative z-10 w-full flex flex-col gap-3">
                 <div class="flex items-center gap-4">
-                <Mail />
-                <span class="text-surface text-desktop-body font-light">
-                    hello@do4you.co.za
-                </span>
+                    <Mail />
+                    <span class="text-surface text-desktop-body font-light">
+                        support@do4you.co.za
+                    </span>
                 </div>
 
                 <div class="flex items-center gap-4">
-                <Phone />
-                <span class="text-surface text-desktop-body font-light">
-                    +27 81 276 5709
-                </span>
+                    <Phone />
+                    <span class="text-surface text-desktop-body font-light">
+                        +27 68 902 9543
+                    </span>
                 </div>
             </div>
-
         </div>
 
-
         <div class="flex-1 flex flex-col p-6 md:p-11 text-neutral">
-            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-                <input type="hidden" name="access_key" value="60228c90-2618-4c46-a99f-44858d90b3e8">
+            <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                class="space-y-4"
+            >
+                <input
+                    type="hidden"
+                    name="access_key"
+                    value="60228c90-2618-4c46-a99f-44858d90b3e8"
+                />
 
                 <div class="flex flex-col gap-1">
-                    <label for="name" class="text-neutral text-desktop-small">Name</label>
-                    <input 
-                        type="text" 
-                        name="name" 
+                    <label for="name" class="text-neutral text-desktop-small"
+                        >Name</label
+                    >
+                    <input
+                        type="text"
+                        name="name"
                         required
                         class="border border-neutral rounded-lg py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green900"
                         placeholder="John Doe"
-                    >
+                    />
                 </div>
 
                 <div class="flex flex-col gap-1">
-                    <label for="email" class="text-neutral text-desktop-small">Email</label>
-                    <input 
-                        type="email" 
-                        name="email" 
+                    <label for="email" class="text-neutral text-desktop-small"
+                        >Email</label
+                    >
+                    <input
+                        type="email"
+                        name="email"
                         required
                         class="border border-neutral rounded-lg py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green-900"
                         placeholder="johndoe@gmail.com"
-                    >
+                    />
                 </div>
 
                 <div class="flex flex-col gap-1">
-                    <label for="phone" class="text-neutral text-desktop-small">Phone Number</label>
-                    <input 
-                        type="tel" 
-                        name="phone" 
+                    <label for="phone" class="text-neutral text-desktop-small"
+                        >Phone Number</label
+                    >
+                    <input
+                        type="tel"
+                        name="phone"
                         required
                         class="border border-neutral rounded-lg py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green-900"
                         placeholder="012 345 6789"
-                    >
+                    />
                 </div>
 
                 <div class="flex flex-col gap-1">
-                    <label for="message" class="text-neutral text-desktop-small">Message (optional)</label>
-                    <textarea 
-                    name="message" 
-                    class="border border-neutral rounded-lg py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green-900"
-                    placeholder="Write your message here..."
-                    rows="5">
-                    </textarea>
+                    <label for="message" class="text-neutral text-desktop-small"
+                        >Message (optional)</label
+                    >
+                    <textarea
+                        name="message"
+                        class="border border-neutral rounded-lg py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green-900"
+                        placeholder="Write your message here..."
+                        rows="5"></textarea>
                 </div>
-               
 
-                <button type="submit" class="w-full mt-4 rounded-lg py-3 text-surface bg-accent-green-900 hover:text-accent-green-900 border text-center hover:border-accent-green-900 hover:bg-surface cursor-pointer text-mobile-h6 md:text-desktop-h6 transition duration-150">Submit</button>
+                <button
+                    type="submit"
+                    class="w-full mt-4 rounded-lg py-3 text-surface bg-accent-green-900 hover:text-accent-green-900 border text-center hover:border-accent-green-900 hover:bg-surface cursor-pointer text-mobile-h6 md:text-desktop-h6 transition duration-150"
+                    >Submit</button
+                >
             </form>
         </div>
-
     </div>
-
 </section>
