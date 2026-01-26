@@ -9,7 +9,7 @@ export const reviews = [
     stars: 5,
     review:
       "The process felt overwhelming at first, but they broke it down step by step. Every document was checked properly and nothing was rushed.",
-    name: "Priya S."
+    name: "Maria L."
   },
   {
     stars: 4,
@@ -21,13 +21,13 @@ export const reviews = [
     stars: 5,
     review:
       "What I liked most was the clarity. No confusing jargon, just clear instructions and honest advice. I knew exactly what to expect before my appointment.",
-    name: "Neha M."
+    name: "Daniel M."
   },
   {
     stars: 4,
     review:
       "They reviewed my documents carefully and pointed out mistakes I would have missed. It saved me a lot of stress and time.",
-    name: "Arjun P."
+    name: "Thandi N."
   },
   {
     stars: 5,
