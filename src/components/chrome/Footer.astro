@@ -20,7 +20,7 @@ const {
                 alt={logo.alt}
             />
 
-            <span class="md:max-w-lg text-desktop-small font-light">
+            <span class="md:max-w-lg text-body-md">
                 {tagline}
             </span>
 
@@ -30,7 +30,7 @@ const {
         <ul>
             {
                 quickLinks.map((item:any) => (
-                    <li class="text-desktop-body text-neutral">
+                    <li class="text-body-md text-neutral">
                         <Button href={item.href} label={item.label} classes="hover:text-primary-blue cursor-pointer flex items-center gap-2"  iconPosition="left">
                             <Image
                                 src={Bullet}
@@ -50,7 +50,7 @@ const {
 
         <p class="block text-neutral-8 text-sm font-light text-center">** Do4You is not affiliated with VFS or Home Affairs. Services are for guidance and form assistance only. **</p>
 
-        <div class="mt-6 flex max-sm:flex-col gap-2 justify-between items-center text-neutral-10 text-desktop-small font-light">
+        <div class="mt-6 flex max-sm:flex-col gap-2 justify-between items-center text-neutral-10 text-body-md font-light">
             <p>&copy {copyright}</p>
             <p class="">
                 <Button href="/terms" label="Terms & Conditions" classes="hover:text-neutral-7 cursor-pointer"/>

@@ -6,8 +6,8 @@ import { process } from "../../data/process";
   id="process"
   class="relative max-w-7xl mx-auto w-full px-5 my-10 md:my-20 scroll-mt-26"
 >
-  <h1 class="text-neutral max-w-2xl text-mobile-h3 md:text-desktop-h3 font-medium leading-tight">
-    A simple process that actually makes sense
+  <h1 class="text-neutral max-w-2xl text-h2">
+    Our simple process
   </h1>
   
   <!-- STICKY DISPLAY (ONE ONLY) -->
@@ -44,18 +44,18 @@ import { process } from "../../data/process";
         
     <div class="flex gap-8 lg:gap-14 flex-1">
       <!-- Timeline -->
-      <div id="timeline" class="max-md:hidden flex md:flex-col items-center">
+      <div id="timeline" class="max-lg:hidden flex md:flex-col items-center">
           {process.map((_, i) => (
               <>
                   <div
                       data-dot={i}
                       class:list={[
-                      "w-12 h-12 md:w-18 md:h-18 rounded-full flex items-center justify-center transition-colors duration-300",
+                      "w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300",
                       i === 0 ? "bg-primary-blue-500" : "border border-primary-blue-500"
                       ]}
                   >
                       <span class:list={[
-                      "text-mobile-h4 md:text-desktop-h4",
+                      "text-body-lg",
                       i === 0 ? "text-surface" : "text-primary-blue-900"
                       ]}>
                           {i + 1}
@@ -74,10 +74,10 @@ import { process } from "../../data/process";
         id="process-content"
         class="text-neutral space-y-3 md:space-y-8 font-light transition-opacity duration-300"
       >
-        <h2 class="text-mobile-h3 md:text-desktop-h3 font-semibold leading-7 md:leading-12">
+        <h2 class="text-h3">
           {process[0].title}
         </h2>
-        <p class="text-mobile-h5 md:text-desktop-h5">
+        <p class="text-body-md">
           {process[0].description}
         </p>
       </div>

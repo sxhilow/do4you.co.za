@@ -56,26 +56,6 @@
   --color-neutral-12: #313633;
   --color-neutral-13: #1f2421;
 
-
-  --text-desktop-h1: 80px;
-  --text-desktop-h2: 56px;
-  --text-desktop-h3: 40px;
-  --text-desktop-h4: 32px;
-  --text-desktop-h5: 24px;
-  --text-desktop-h6: 20px;
-  --text-desktop-body: 18px;
-  --text-desktop-small: 15px;
-
-
-  --text-mobile-h1: 40px;
-  --text-mobile-h2: 32px;
-  --text-mobile-h3: 28px;
-  --text-mobile-h4: 22px;
-  --text-mobile-h5: 18px;
-  --text-mobile-h6: 16px;
-  --text-mobile-body: 16px;
-  --text-mobile-small: 14px;
-
 }
 
 body{
@@ -89,4 +69,100 @@ body{
     theme(--color-surface) 15%,
     theme(--color-accent-green-300) 80%
   );
+}
+
+@utility text-display-lg {
+  /* Mobile: 48px, Bold, -1.44% tracking */
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.0144em;
+  line-height: 1.1;
+
+  @media (width >=768px) {
+    /* Desktop: 80px, Bold, -3.2% tracking */
+    font-size: 80px;
+    letter-spacing: -0.032em;
+  }
+}
+
+@utility text-h1 {
+  /* Mobile: 40px, Bold, -1.5% tracking */
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+
+  @media (width >=768px) {
+    /* Desktop: 64px, Bold, -2% tracking */
+    font-size: 64px;
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility text-h2 {
+  /* Mobile: 32px, SemiBold, -1% tracking */
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+
+  @media (width >=768px) {
+    /* Desktop: 48px, SemiBold, -1% tracking */
+    font-size: 48px;
+  }
+}
+
+@utility text-h3 {
+  /* Mobile: 24px, SemiBold, 0% tracking */
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0em;
+  line-height: 1.2;
+
+  @media (width >=768px) {
+    /* Desktop: 32px, SemiBold, -0.3% tracking */
+    font-size: 32px;
+    letter-spacing: -0.003em;
+    line-height: 1.3;
+  }
+}
+
+@utility text-body-lg {
+  /* Mobile: 18px, Regular, 0% tracking */
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 1.5;
+
+  @media (width >=768px) {
+    /* Desktop: 20px, Regular, 0% tracking */
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+
+@utility text-body-md {
+  /* Mobile & Desktop: 16px, Regular, 0% tracking */
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 1.5;
+
+  @media (width >=768px) {
+    line-height: 1.6;
+  }
+}
+
+@utility text-caption {
+  /* Mobile: 11px, Regular, 0.5% tracking */
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.4;
+
+  @media (width >=768px) {
+    /* Desktop: 12px, Medium, 0.5% tracking */
+    font-size: 12px;
+    font-weight: 500;
+  }
 }

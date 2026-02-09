@@ -21,14 +21,14 @@ const {
     </div>
     <div class="p-4 md:p-7 gap-5 flex flex-col flex-1">
 
-        <div class="space-y-1">
-            <h2 class="text-desktop-h5 leading-tight">{title}</h2>
-            <p class="font-light text-desktop-body">{description}</p>
+        <div class="space-y-2">
+            <h2 class="text-body-lg font-semibold">{title}</h2>
+            <p class="font-light text-body-md">{description}</p>
         </div>
 
-        <div class="space-y-3">
-            <h3 class="text-desktop-h6 font-medium">What we help with: </h3>
-            <ul class="space-y-2 text-desktop-body font-light">
+        <div class="space-y-4">
+            <h3 class="text-body-md font-medium">What we help with: </h3>
+            <ul class="space-y-2 text-body-md font-light">
                 {
                     items.map((item:any) => (
                         <li class="flex items-center gap-2 leading-tight">
@@ -49,7 +49,7 @@ const {
             <Button
                 href={whatsappData.link}
                 label="Let us help you"
-                classes="block rounded-lg px-5 py-3 text-accent-green-800 border text-center border-accent-green-600 hover:bg-accent-green-500 hover:text-surface cursor-pointer text-mobile-h6 md:text-desktop-h6"
+                classes="block rounded-lg px-5 py-3 text-accent-green-800 border text-center border-accent-green-600 hover:bg-accent-green-500 hover:text-surface cursor-pointer text-body-md"
                 target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"
             />
         </div>

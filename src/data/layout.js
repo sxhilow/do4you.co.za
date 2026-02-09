@@ -10,7 +10,7 @@ export const headerData = {
   navItems: [
     { href: "/#", label: "Home" },
     { href: "/#services", label: "Services" },
-    { href: "/#process", label: "Our Process" },
+    { href: "/#process", label: "Process" },
     { href: "/#work", label: "Work" },
   ],
   cta: {
