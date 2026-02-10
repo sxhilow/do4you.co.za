@@ -8,12 +8,13 @@ import { whatsappData } from "../../data/Whatsapp"
 
 <section id="services" class="max-w-7xl mx-auto w-full px-5 my-10 md:my-20 space-y-6 md:space-y-11 scroll-mt-26">
 
-    <h1 class="text-neutral text-h2">What we help you with</h1>
+    <h1 class="text-neutral text-h2">Our Services and Pricing</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 items-stretch gap-11">
         {
             services.map((service:any) => (
                 <ServiceCard
+                    price={service.price}
                     image={service.image}
                     title={service.title}
                     description={service.description}

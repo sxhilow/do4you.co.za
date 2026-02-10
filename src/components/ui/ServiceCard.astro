@@ -1,60 +1,50 @@
 ---
-import { Image } from "astro:assets"
-import Check from "../../assets/icons/Check.svg"
-import Button from "./Button.astro"
-import { whatsappData } from "../../data/Whatsapp"
+import { Image } from "astro:assets";
+import Check from "../../assets/icons/Check.svg";
+import Button from "./Button.astro";
+import { whatsappData } from "../../data/Whatsapp";
 
-const {
-    image,
-    title,
-    description,
-    items = []
-} = Astro.props
+const { price, image, title, description, items = [] } = Astro.props;
 ---
 
-<div class="shadow-md rounded-xl h-full flex flex-col">
+<div class="shadow-lg rounded-xl h-full flex flex-col border border-neutral-5">
     <div>
-        <Image
-            src={image}
-            alt={"Service Image"}
-        />
+        <Image src={image} alt={"Service Image"} />
     </div>
     <div class="p-4 md:p-7 gap-5 flex flex-col flex-1">
-
         <div class="space-y-2">
-            <h2 class="text-body-lg font-semibold">{title}</h2>
-            <p class="font-light text-body-md">{description}</p>
+            <h2 class="text-h3 font-medium text-primary-blue">{price}</h2>
+
+            <div class="space-y-1">
+                <h3 class="text-body-lg font-semibold">{title}</h3>
+                <p class="font-light text-body-md">{description}</p>
+            </div>
         </div>
 
         <div class="space-y-4">
-            <h3 class="text-body-md font-medium">What we help with: </h3>
+            <h4 class="text-body-md font-medium">Everything included:</h4>
             <ul class="space-y-2 text-body-md font-light">
                 {
-                    items.map((item:any) => (
+                    items.map((item: any) => (
                         <li class="flex items-center gap-2 leading-tight">
-                            <Image
-                                src={Check}
-                                alt={"✔️"}
-                            />
+                            <Image src={Check} alt={"✔️"} />
 
                             <span>{item}</span>
                         </li>
                     ))
                 }
             </ul>
-
         </div>
 
-        <div class=" mt-auto">
+        <div class="mt-auto">
             <Button
                 href={whatsappData.link}
                 label="Let us help you"
                 classes="block rounded-lg px-5 py-3 text-accent-green-800 border text-center border-accent-green-600 hover:bg-accent-green-500 hover:text-surface cursor-pointer text-body-md"
-                target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat with us on WhatsApp"
             />
         </div>
-
-        
     </div>
-    
 </div>
