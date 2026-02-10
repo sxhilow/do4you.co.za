@@ -3,27 +3,29 @@ import Service2 from "../assets/images/Service2.avif"
 
 export const services = [
     {
+        price: "R800",
         image: Service1,
-        title: "Visa & Permit Form Filling Assistance",
-        description: "Most visa rejections don’t happen because people are ineligible, they happen because the wrong category was used or the form was filled incorrectly. We help you avoid that.",
+        title: "Visa & Permit Form Assistance",
+        description: "We assist with any type of visa extension forms (eg. Study, Spousal, Relative, etc...)",
         items: [
-            "Visitor visas (tourism, family visits)",
-            "Study permits",
-            "Spousal visas",
-            "Spousal visas with work",
-            "Visa extensions",
-            "Appeal Applications"
+            "Complete your application forms correctly",
+            "Write strong support letters (if needed)",
+            "Review all your documents for errors",
+            "Highlight missing or incomplete requirements",
+            "Provide official medical report forms for your doctor"
         ]
     },
     {
+        price: "R1500",
         image: Service2,
-        title: "Permanent Residence Applications",
-        description: "Permanent residency isn’t just paperwork, it’s a legal process. We assist with permanent residence applications by ensuring your forms meet Home Affairs requirements before submission.",
+        title: "Permanent Residence Form Assistance",
+        description: "We assist with permanent residence application form by ensuring your forms are filled correctly before submission.",
         items: [
-            "Permanent residence form completion",
-            "Supporting document compliance checks",
-            "Assistance with rejected or appealed applications",
-            "Guidance on next steps and submission"
+            "Accurate completion of all forms",
+            "Professional support letters (if applicable)",
+            "Thorough document review",
+            "Identify and fix missing requirements",
+            "Supply official medical report forms for your doctor"
         ]
     },
 ]
