@@ -24,7 +24,7 @@ export const services = [
             "Accurate completion of all forms",
             "Professional support letters (if applicable)",
             "Thorough document review",
-            "Identify and fix missing requirements",
+            "Identify missing requirements",
             "Supply official medical report forms for your doctor"
         ]
     },
