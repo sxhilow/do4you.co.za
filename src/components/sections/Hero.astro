@@ -1,65 +1,38 @@
 ---
 import Button from "../ui/Button.astro";
 import Whatsapp from "../../assets/icons/Whatsapp.svg";
+import Document from "../../assets/icons/Document.svg";
+import Walk from "../../assets/icons/Walk.svg";
 import { whatsappData } from "../../data/Whatsapp";
 import { Image } from "astro:assets";
+import HeroImage from "../../assets/images/hero.png";
 ---
 
-<section id="#" class="relative h-screen pt-24 overflow-hidden">
-    <Image
-        src="/images/Hero.webp"
-        alt="Visa form filling assistance in South Africa"
-        class="absolute inset-0 w-full h-full object-cover"
-        loading="eager"
-        fetchpriority="high"
-        width="1920"
-        height="1080"
-    />
-
+<section id="#" class=`pt-26 flex flex-col gap-8 -scroll-mt-12`>
     <div
-        class="fixed top-0 w-full h-26 bg-linear-to-b from-surface/50 to-surface/0"
+        class="relative bg-neutral-2 border border-blue-100 w-full lg:px-16 lg:py-32 rounded-4xl overflow-hidden flex flex-col lg:block"
     >
-    </div>
-
-    <div
-        class="relative max-w-7xl mx-auto h-full px-5 py-22 md:py-12 flex flex-col justify-end"
-    >
-        <div class="flex flex-col gap-y-6">
-            <div
-                class="flex max-lg:flex-col gap-2 justify-between items-start"
-            >
-                <div class="flex-3/4 max-w-4xl">
-                    <h1
-                        class="text-h1 font-semibold text-surface"
+        <div
+            class="relative z-10 lg:max-w-xl flex flex-col gap-4 max-lg:px-8 max-lg:pt-8"
+        >
+            <div class="space-y-2">
+                <h1 class="text-h1 text-brand-neutral">
+                    Need help with your visa forms? <span
+                        class="text-brand-blue">Let us handle it.</span
                     >
-                        Need help with your visa application forms? <span
-                            class="text-accent-green"
-                            >Let us handle it.
-                        </span>
-                    </h1>
-                </div>
-
-                <div class="flex-1/4 lg:py-2">
-                    <p class="text-surface text-body-lg">
-                        We take care of your visa forms and supporting
-                        documents, so you can focus on enjoying South Africa,
-                        not stressing over paperwork.
-                    </p>
-                </div>
+                </h1>
+                <p class="text-brand-neutral">
+                    We fill in your visa forms and prepare your documents, so
+                    you don't have to worry about mistakes.
+                </p>
             </div>
-
-            <div class="flex max-md:flex-col justify-left gap-2 md:gap-4">
-                <Button
-                    href="#process"
-                    label="See how it works"
-                    classes="rounded-lg text-center px-5 py-3 gap-2 bg-primary-blue text-surface hover:bg-primary-blue-900 cursor-pointer text-body-md"
-                />
-
+            <div class="w-full">
                 <Button
                     href={whatsappData.link}
-                    label="Contact on WhatsApp"
-                    classes="rounded-lg px-5 py-3 flex justify-center items-center gap-2 text-surface bg-accent-green-500 hover:bg-accent-green-700 cursor-pointer text-body-md"
+                    label="WhatsApp us"
+                    variant="outline"
                     iconPosition="left"
+                    class="max-md:w-full"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Chat with us on WhatsApp"
@@ -67,6 +40,63 @@ import { Image } from "astro:assets";
                     <Whatsapp slot={"icon"} />
                 </Button>
             </div>
+        </div>
+
+        <div
+            class="relative flex mt-8 md:mt-0 lg:absolute lg:right-0 bottom-0 lg:h-full"
+        >
+            <Image
+                src={HeroImage}
+                alt="do4you"
+                class="w-full aspect-3/4 md:aspect-auto object-cover object-top h-full md:w-auto md:object-contain"
+            />
+        </div>
+        <div
+            class="absolute right-5 bottom-8 md:right-20 md:bottom-60 bg-neutral-1 border border-blue-100 rounded-2xl w-54 p-4 flex flex-col gap-1"
+        >
+            <span class="text-h3 text-brand-blue">500+</span>
+            <span class="text-neutral-10"
+                >Visa forms completed without any errors</span
+            >
+            <span class="text-brand-blue">★★★★★</span>
+        </div>
+    </div>
+    <div class="flex max-lg:flex-col gap-4 lg:gap-6">
+        <div
+            class="flex-1 bg-blue-50 flex gap-2 items-center justify-between p-4 lg:p-8 rounded-2xl border border-blue-200"
+        >
+            <div class="flex flex-col gap-1">
+                <h2 class="text-h3">Send us a Message</h2>
+                <p class="text-neutral-10">
+                    Send us a message and tell us which visa form you need help
+                    with.
+                </p>
+            </div>
+            <Whatsapp class="w-26 h-26 text-brand-blue" />
+        </div>
+        <div
+            class="flex-1 bg-neutral-2 flex gap-4 items-center justify-between p-4 lg:p-8 rounded-2xl border border-neutral-5"
+        >
+            <div>
+                <h2 class="text-h3">We fill in your forms</h2>
+                <p class="text-neutral-10">
+                    We complete your forms and documents correctly, and book
+                    your VFS appointment
+                </p>
+            </div>
+            <Document class="w-32 h-32 text-brand-blue" />
+        </div>
+        <div
+            class="flex-1 bg-blue-50 flex gap-4 items-center justify-between p-4 lg:p-8 rounded-2xl border border-blue-200"
+        >
+            <div>
+                <h2 class="text-h3">Go to VFS & apply</h2>
+                <p class="text-neutral-10">
+                    Go to your appointment with everything ready. No stress, no
+                    mistakes.
+                </p>
+            </div>
+            <Walk class="w-32 h-32 text-brand-blue" />
         </div>
     </div>
 </section>
