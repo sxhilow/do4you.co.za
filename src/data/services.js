@@ -1,15 +1,11 @@
-import Service1 from "../assets/images/Service1.avif"
-import Service2 from "../assets/images/Service2.avif"
-
 export const services = [
     {
         price: "R800",
-        image: Service1,
-        title: "Visa & Permit Form Assistance",
+        title: "Visa & Permit Forms",
         description: "We assist with any type of visa extension forms (eg. Study, Spousal, Relative, etc...)",
         items: [
             "Complete your application forms correctly",
-            "Write strong support letters (if needed)",
+            "Write strong support letters",
             "Review all your documents for errors",
             "Highlight missing or incomplete requirements",
             "Provide official medical report forms for your doctor"
@@ -17,12 +13,11 @@ export const services = [
     },
     {
         price: "R1500",
-        image: Service2,
-        title: "Permanent Residence Form Assistance",
+        title: "Permanent Residence Forms",
         description: "We assist with permanent residence application form by ensuring your forms are filled correctly before submission.",
         items: [
             "Accurate completion of all forms",
-            "Professional support letters (if applicable)",
+            "Professional support letters",
             "Thorough document review",
             "Identify missing requirements",
             "Supply official medical report forms for your doctor"
