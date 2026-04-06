@@ -1,62 +1,62 @@
 ---
 import Mail from "../../assets/icons/Mail.svg";
 import Phone from "../../assets/icons/Phone.svg";
+import Section from "../ui/Section.astro";
 ---
 
-<section
+<Section
     id="contact"
-    class="max-w-7xl mx-auto w-full px-5 mt-17 md:mt-36 space-y-6 md:space-y-11 scroll-mt-26"
 >
     <h1
-        class="text-neutral text-h2"
+        class="text-neutral text-h2 text-center"
     >
-        Talk to a real person 
+        Contact Us
     </h1>
 
     <div
-        class="flex rounded-xl border border-accent-green-900 overflow-hidden flex-col md:flex-row"
+        class="flex rounded-2xl border border-brand-blue overflow-hidden flex-col md:flex-row"
     >
         <div
-            class="flex-1 relative flex flex-col items-center bg-accent-green-900 p-5 gap-11 overflow-hidden"
+            class="flex-1 relative flex flex-col items-center bg-blue-900 p-8 gap-11 overflow-hidden"
         >
             <span
-                class="max-sm:hidden absolute inset-0 flex items-center justify-center text-[200px] font-bold text-surface/5 tracking-[-0.08em] pointer-events-none select-none"
+                class="max-sm:hidden absolute inset-0 flex items-center justify-center text-[200px] font-bold text-blue-50/5 tracking-[-0.08em] pointer-events-none select-none"
             >
                 do4you
             </span>
 
             <div
-                class="absolute -bottom-45 -right-45 w-96 h-96 rounded-full bg-accent-green-800"
+                class="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-blue-800"
             >
             </div>
 
             <div class="relative z-10 text-center space-y-2">
-                <h2 class="text-h3 text-surface">
+                <h2 class="text-h3 text-brand-surface">
                     Contact Information
                 </h2>
-                <p class="text-body-md font-light text-surface">
+                <p class=" text-brand-surface">
                     Fill out the form and we’ll get back to you within 24 hours.
                 </p>
             </div>
 
             <div class="relative z-10 w-full flex flex-col gap-3">
                 <div class="flex items-center gap-4">
-                    <Mail/>
-                    <span class="text-surface text-body-md">
+                    <Mail class="w-8 h-8"/>
+                    <span class="text-brand-surface">
                         support@do4you.co.za
                     </span>
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <Phone />
-                    <span class="text-surface text-body-md">
+                    <Phone class="w-8 h-8"/>
+                    <span class="text-brand-surface">
                         +27 68 902 9543
                     </span>
                 </div>
             </div>
         </div>
 
-        <div class="flex-1 flex flex-col p-6 md:p-11 text-neutral">
+        <div class="flex-1 flex flex-col p-6 md:p-12 text-neutral">
             <form
                 action="https://api.web3forms.com/submit"
                 method="POST"
@@ -69,61 +69,61 @@ import Phone from "../../assets/icons/Phone.svg";
                 />
 
                 <div class="flex flex-col gap-1">
-                    <label for="name" class="text-neutral text-body-md"
+                    <label for="name" class="text-neutral "
                         >Name</label
                     >
                     <input
                         type="text"
                         name="name"
                         required
-                        class="border border-neutral rounded-lg py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green900"
+                        class="border border-brand-blue rounded-2xl py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green900"
                         placeholder="John Doe"
                     />
                 </div>
 
                 <div class="flex flex-col gap-1">
-                    <label for="email" class="text-neutral text-body-md"
+                    <label for="email" class="text-neutral "
                         >Email</label
                     >
                     <input
                         type="email"
                         name="email"
                         required
-                        class="border border-neutral rounded-lg py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green-900"
+                        class="border border-brand-blue rounded-2xl py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green-900"
                         placeholder="johndoe@gmail.com"
                     />
                 </div>
 
                 <div class="flex flex-col gap-1">
-                    <label for="phone" class="text-neutral text-body-md"
+                    <label for="phone" class="text-neutral "
                         >Phone Number</label
                     >
                     <input
                         type="tel"
                         name="phone"
                         required
-                        class="border border-neutral rounded-lg py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green-900"
+                        class="border border-brand-blue rounded-2xl py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green-900"
                         placeholder="012 345 6789"
                     />
                 </div>
 
                 <div class="flex flex-col gap-1">
-                    <label for="message" class="text-neutral text-body-md"
+                    <label for="message" class="text-neutral "
                         >Message (optional)</label
                     >
                     <textarea
                         name="message"
-                        class="border border-neutral rounded-lg py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green-900"
+                        class="border border-brand-blue rounded-2xl py-3 px-5 focus:outline-none focus:ring-2 focus:ring-accent-green-900"
                         placeholder="Write your message here..."
                         rows="5"></textarea>
                 </div>
 
                 <button
                     type="submit"
-                    class="w-full mt-4 rounded-lg py-3 text-surface bg-accent-green-900 hover:text-accent-green-900 border text-center hover:border-accent-green-900 hover:bg-surface cursor-pointer text-body-md transition duration-150"
+                    class="w-full flex items-center justify-center transition duration-300 group aria-[current=page]:text-primary-blue cursor-pointer bg-linear-to-b from-brand-blue to-blue-700 text-brand-surface hover:from-blue-500 hover:to-blue-500 px-4 py-3 gap-2 rounded-2xl"
                     >Submit</button
                 >
             </form>
         </div>
     </div>
-</section>
+</Section>

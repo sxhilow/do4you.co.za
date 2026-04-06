@@ -2,37 +2,35 @@ export const reviews = [
   {
     stars: 5,
     review:
-      "I was confused about which visa to apply for and what documents were needed. They explained everything clearly and filled the forms correctly. I felt more confident when I went to VFS.",
+      "I was very confuse about which visa I must apply and what documents they need. I try to read the website myself but everything was so confusing and I was worry I will make mistake. They explain everything step by step, very patient, and fill all the forms correct. They also check my documents two times before I go. When I arrive at VFS I was feeling very prepared and confident. Really I could not do this without their help.",
     name: "Amit R."
   },
   {
     stars: 5,
-    review:
-      "The process felt overwhelming at first, but they broke it down step by step. Every document was checked properly and nothing was rushed.",
-    name: "Maria L."
+    review: "Genuine Service , Fast and Reliable. I wil recommend to everyone to use this service to save your valuable time and money both",
+    name: "Abu S."
   },
   {
     stars: 4,
     review:
-      "Very professional service. They answered all my questions and guided me through the application. The experience at VFS was smooth because everything was already in order.",
+      "Very professional peoples. I have many questions because my situation was little bit complicated — I have gap in my travel and I was not sure if this is problem. They explain everything clearly and tell me exactly what to write. They answer all my questions and never make me feel like I am bother them. At VFS everything go smoothly because all documents was already ready and in correct order. No problem at all, very smooth experience.",
     name: "Faisal K."
   },
   {
     stars: 5,
     review:
-      "What I liked most was the clarity. No confusing jargon, just clear instructions and honest advice. I knew exactly what to expect before my appointment.",
-    name: "Daniel M."
+      "What I like most is they are very clear and honest. No complicated words, just simple advice. I contact many other services before and they just confuse me more. Here they sit with me and go through everything together. Even when something change at last minute with my travel date they fix it quickly and update all the forms same day. I never feel like I am problem for them. I will use them again for sure.",
+    name: "Kareem M."
   },
   {
     stars: 4,
-    review:
-      "They reviewed my documents carefully and pointed out mistakes I would have missed. It saved me a lot of stress and time.",
+    review: "They find mistakes in my forms that I cannot see myself. If I submit alone I think there will be big problem. They save me from a lot of stress.",
     name: "Thandi N."
   },
   {
     stars: 5,
     review:
-      "From the first call to the final submission, everything was handled professionally. I didn’t feel lost at any stage of the process.",
+      "From first time I contact them until everything is submit, they handle everything proper. I never feel lost or confuse at any step. Very good experience.",
     name: "Sara K."
   }
 ];

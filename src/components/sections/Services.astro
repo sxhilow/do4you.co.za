@@ -2,17 +2,16 @@
 import ServiceCard from "../ui/ServiceCard.astro";
 import { services } from "../../data/services.js";
 import Button from "../ui/Button.astro";
-import { whatsappData } from "../../data/Whatsapp"
-
+import { whatsappData } from "../../data/Whatsapp";
+import Section from "../ui/Section.astro";
 ---
 
-<section id="services" class="max-w-7xl mx-auto w-full px-5 my-10 md:my-20 space-y-6 md:space-y-11 scroll-mt-26">
+<Section id="services">
+    <h1 class="text-neutral text-h2 text-center">What we help you with</h1>
 
-    <h1 class="text-neutral text-h2">Our Services and Pricing</h1>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 items-stretch gap-11">
+    <div class="grid grid-cols-1 md:grid-cols-2 items-stretch gap-6">
         {
-            services.map((service:any) => (
+            services.map((service: any) => (
                 <ServiceCard
                     price={service.price}
                     image={service.image}
@@ -24,22 +23,23 @@ import { whatsappData } from "../../data/Whatsapp"
         }
     </div>
 
-    <div class="w-full p-7 md:p-10 bg-radial-accent rounded-2xl text-center space-y-6">
-
-        <div class="text-h3 max-w-xl mx-auto font-medium">
-            Not sure which <span class="text-primary-blue-600 font-bold">visa</span> applies to your situation?
+    <div
+        class="w-full p-7 md:p-10 bg-radial-[at_50%_25%] from-brand-surface via-blue-50 to-blue-200 rounded-2xl text-center border border-blue-100 space-y-6"
+    >
+        <div class="text-h3 max-w-xl mx-auto">
+            Still have questions? We'll help you <span class="text-brand-blue"
+                >figure
+            </span> it out.
         </div>
 
         <div>
             <Button
                 href={whatsappData.link}
-                label="Chat with us"
-                classes="rounded-full text-center px-5 py-3 gap-2 bg-primary-blue text-surface hover:bg-primary-blue-900 cursor-pointer text-body-md"
-                target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"
+                label="Get help choosing the right visa"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat with us on WhatsApp"
             />
         </div>
-
     </div>
-
-
-</section>
+</Section>

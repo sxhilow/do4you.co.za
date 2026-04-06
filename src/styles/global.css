@@ -11,35 +11,21 @@
   --font-base: "Poppins", sans-serif;
 
 
-  --color-surface: #f4f3ee;
-  --color-primary-blue: #4381c1;
-  --color-accent-green: #37d193;
-  --color-neutral: #1f2421;
+  --color-brand-surface: #f6f6f6;
+  --color-brand-blue: #4381c1;
+  --color-brand-neutral: #1f2421;
 
 
-  --color-primary-blue-50: #ecf2f9;
-  --color-primary-blue-100: #c5d8ec;
-  --color-primary-blue-200: #a9c5e2;
-  --color-primary-blue-300: #81abd5;
-  --color-primary-blue-400: #699acd;
-  --color-primary-blue-500: #4381c1;
-  --color-primary-blue-600: #3d75b0;
-  --color-primary-blue-700: #305c89;
-  --color-primary-blue-800: #25476a;
-  --color-primary-blue-900: #1c3651;
-
-
-  --color-accent-green-50: #ebfaf4;
-  --color-accent-green-100: #c1f1de;
-  --color-accent-green-200: #a3eacd;
-  --color-accent-green-300: #79e0b7;
-  --color-accent-green-400: #5fdaa9;
-  --color-accent-green-500: #37d193;
-  --color-accent-green-600: #32be86;
-  --color-accent-green-700: #279468;
-  --color-accent-green-800: #1e7351;
-  --color-accent-green-900: #17583e;
-
+  --color-blue-50: #ecf2f9;
+  --color-blue-100: #c5d8ec;
+  --color-blue-200: #a9c5e2;
+  --color-blue-300: #81abd5;
+  --color-blue-400: #699acd;
+  --color-blue-500: #4381c1;
+  --color-blue-600: #3d75b0;
+  --color-blue-700: #305c89;
+  --color-blue-800: #25476a;
+  --color-blue-900: #1c3651;
 
 
   --color-neutral-1: #ffffff;
@@ -56,19 +42,38 @@
   --color-neutral-12: #313633;
   --color-neutral-13: #1f2421;
 
+  --animate-fade-in-from-top: fade-in-from-top 0.3s ease-out;
+  --animate-fade-out-from-top: fade-out-from-top 0.3s ease-out;
+
+  @keyframes fade-in-from-top {
+    0% {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-out-from-top {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+  }
+
 }
 
 body{
-    background-color: var(--color-surface);
+    background-color: var(--color-brand-surface);
     font-family: var(--font-base);
-}
-
-.bg-radial-accent{
-  background: radial-gradient(
-    circle at center,
-    theme(--color-surface) 15%,
-    theme(--color-accent-green-300) 80%
-  );
 }
 
 @utility text-display-lg {

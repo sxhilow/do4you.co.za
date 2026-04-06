@@ -59,7 +59,7 @@ const {
 		</div>
 		
 
-			<main class="flex flex-col min-h-screen"> 
+			<main class="flex flex-col max-w-[1350px] mx-auto px-5"> 
 				<slot />
 				<a
 					href={whatsappData.link}
@@ -72,7 +72,7 @@ const {
 				</a>
 			</main>
 		
-		<div class="px-5">
+		<div class="p-8 lg:py-16 lg:px-32 mt-41 bg-blue-900">
 			<Footer {...footerData}/>
 		</div>
 
@@ -82,9 +82,9 @@ const {
 
 			window.addEventListener("scroll", () => {
 				if(window.scrollY > 10){
-					navbar.classList.add("bg-surface", "shadow-sm")
+					navbar.classList.add("bg-brand-surface", "shadow")
 				}else{
-					navbar.classList.remove("bg-surface", "shadow-sm")
+					navbar.classList.remove("bg-brand-surface", "shadow")
 				}
 			})
 		</script>
