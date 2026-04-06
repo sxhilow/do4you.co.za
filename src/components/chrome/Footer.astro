@@ -1,63 +1,75 @@
 ---
 import { Image } from "astro:assets";
 import Button from "../ui/Button.astro";
-import Bullet from "../../assets/icons/Bullet.svg"
 
-const {
-    logo,
-    tagline,
-    copyright,
-    quickLinks = [],
-} = Astro.props
+const { logo, tagline, copyright, quickLinks = [] } = Astro.props;
 ---
 
-<footer class="max-w-7xl mx-auto py-24 max-md:py-20 ">
-
-    <div class="flex max-md:flex-col max-md:gap-8 justify-between items-start">
+<footer class="">
+    <div
+        class="flex max-md:flex-col max-md:gap-8 justify-between items-start lg:px-5"
+    >
         <div class="flex flex-col gap-2">
-            <Image
-                src={logo.src}
-                alt={logo.alt}
-            />
+            <Image src={logo.src} alt={logo.alt} />
 
-            <span class="md:max-w-lg text-body-md">
+            <p class="md:max-w-lg text-body-md text-neutral-5">
                 {tagline}
-            </span>
-
+            </p>
         </div>
-        
 
-        <ul>
-            {
-                quickLinks.map((item:any) => (
-                    <li class="text-body-md text-neutral">
-                        <Button href={item.href} label={item.label} classes="hover:text-primary-blue cursor-pointer flex items-center gap-2"  iconPosition="left">
-                            <Image
-                                src={Bullet}
-                                alt="Bullet"
-                                slot={"icon"}
-                                class="w-2 h-2"
+        <div class="flex flex-col gap-4">
+            <span class="text-neutral-2 font-bold">Quick Links</span>
+            <ul class="space-y-1">
+                {
+                    quickLinks.map((item: any) => (
+                        <li class="text-body-md text-neutral-5">
+                            <Button
+                                href={item.href}
+                                label={item.label}
+                                variant="ghost"
+                                iconPosition="left"
                             />
-                        </Button>
-                    </li>
-                ))
-            }
-        </ul>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
     </div>
 
     <div class="mt-10">
-        <hr class="text-neutral-5">
+        <hr class="text-blue-700" />
 
-        <p class="block text-neutral-8 text-sm font-light text-center">** Do4You is not affiliated with VFS or Home Affairs. Services are for guidance and form assistance only. **</p>
-
-        <div class="mt-6 flex max-sm:flex-col gap-2 justify-between items-center text-neutral-10 text-body-md font-light">
-            <p>&copy {copyright}</p>
-            <p class="">
-                <Button href="/terms" label="Terms & Conditions" classes="hover:text-neutral-7 cursor-pointer"/>
+        <div class="flex flex-col justify-center items-center gap-1">
+            <p class="block text-neutral-5 text-sm font-light text-center">
+                ** Do4You is not affiliated with VFS or Home Affairs. Services
+                are for guidance and form assistance only. **
+            </p>
+            <p class="text-neutral-5">
+                <Button
+                    href="/terms"
+                    label="Terms & Conditions"
+                    variant="ghost"
+                />
                 |
-                <Button href="/privacy" label="Privacy Policy" classes="hover:text-neutral-7 cursor-pointer"/>
+                <Button
+                    href="/privacy"
+                    label="Privacy Policy"
+                    variant="ghost"
+                />
             </p>
         </div>
+
+        <div
+            class="mt-12 flex max-md:flex-col gap-2 justify-between items-center text-brand-surface"
+        >
+            <span>&copy {copyright}</span>
+            <div
+                class="text-brand-surface hover:text-brand-blue transition duration-300"
+            >
+                <a href="https://fayda.studio">
+                    Designed & Developed by Fayda.studio
+                </a>
+            </div>
+        </div>
     </div>
-    
 </footer>
