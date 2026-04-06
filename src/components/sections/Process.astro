@@ -1,163 +1,62 @@
 ---
 import { Image } from "astro:assets";
 import { process } from "../../data/process";
+import ProcessImage from "../../assets/images/process.png";
+import Section from "../ui/Section.astro";
 ---
-<section
-  id="process"
-  class="relative max-w-7xl mx-auto w-full px-5 my-10 md:my-20 scroll-mt-26"
->
-  <h1 class="text-neutral max-w-2xl text-h2">
-    Our simple process
-  </h1>
-  
-  <!-- STICKY DISPLAY (ONE ONLY) -->
-  <div class="sticky top-32 min-h-[70vh] h-auto flex max-lg:flex-col gap-4 md:gap-14 mt-6 lg:mt-11 ">
-    
-   
-    <!-- Image Column -->
-    <div class="relative w-full lg:w-auto flex-shrink-0">
-      <div
-        class="relative w-full h-[40vh] md:h-[50vh] lg:h-[620px] lg:w-[620px] lg:max-w-155 overflow-hidden rounded-lg"
-      >
-        {process.map((item, i) => (
-          <Image
-            data-process-image={i}
-            src={item.image}
-            alt={"Process image"}
-            class:list={[
-              "absolute inset-0 w-full h-full object-cover transition-opacity duration-300",
-              i === 0 ? "opacity-100" : "opacity-0"
-            ]}
-            width={620}
-            height={620}
-            sizes="(max-width: 768px) 90vw, 620px"
-            loading={i === 0 ? "eager" : "lazy"}
-            decoding="async"
-            sizes="(max-width: 768px) 100vw, 620px"
-          />
-        ))}
 
-      </div>
+<Section id="process">
+  <h1 class="text-neutral max-w-2xl text-h2">Our simple process</h1>
+
+  <div class="flex max-lg:flex-col w-full lg:gap-12 items-start">
+    <div
+      class="lg:sticky top-32 self-start flex-1 bg-radial from-blue-500 to-blue-50 rounded-4xl border border-blue-500 px-8 lg:px-16 "
+    >
+      <Image
+        src={ProcessImage}
+        alt="Our Process"
+        class="w-full h-auto bottom-0 object-contain"
+      />
     </div>
 
-
-        
-    <div class="flex gap-8 lg:gap-14 flex-1">
-      <!-- Timeline -->
-      <div id="timeline" class="max-lg:hidden flex md:flex-col items-center">
-          {process.map((_, i) => (
-              <>
-                  <div
-                      data-dot={i}
-                      class:list={[
-                      "w-16 h-16 rounded-full flex items-center justify-center transition-colors duration-300",
-                      i === 0 ? "bg-primary-blue-500" : "border border-primary-blue-500"
-                      ]}
-                  >
-                      <span class:list={[
-                      "text-h3",
-                      i === 0 ? "text-surface" : "text-primary-blue-900"
-                      ]}>
-                          {i + 1}
-                      </span>
-                  </div>
-                  {i < process.length - 1 && (
-                      <div class="h-0.5 w-12 md:w-0.5 md:h-20 xl:h-38 bg-primary-blue-500"></div>
-                  )}
-              </>
-          ))}
-      </div>
-
-      
-      <!-- Content -->
-      <div
-        id="process-content"
-        class="text-neutral space-y-3 md:space-y-8 font-light transition-opacity duration-300"
-      >
-        <h2 class="text-h3">
-          {process[0].title}
-        </h2>
-        <p class="text-body-lg">
-          {process[0].description}
-        </p>
-      </div>
-      
+    <div class="flex-1 flex flex-col">
+      {
+        process.map((step, i) => (
+          <div
+            class="step flex flex-col gap-4 
+             lg:min-h-[60vh] lg:justify-center lg:py-16 
+             max-lg:py-8 max-lg:border-b max-lg:border-blue-100 max-lg:opacity-100
+             opacity-10 transition-opacity duration-300"
+            data-step={i}
+          >
+            <span class="text-brand-blue font-bold text-sm tracking-widest uppercase">
+              Step {i + 1}
+            </span>
+            <h2 class="text-h3">{step.title}</h2>
+            <p class="text-body-lg">{step.description}</p>
+          </div>
+        ))
+      }
     </div>
-
   </div>
-  
-  <!-- SCROLL TRIGGERS (NO CONTENT) -->
-    <div class="relative -mt-[70vh]">
-    {process.map((_, i) => (
-        <div data-step={i} class="h-screen"></div>
-    ))}
-    </div>
-  
-  <!-- DATA FOR JS -->
-  <script id="process-data" type="application/json" set:html={JSON.stringify(process)} />
-</section>
+</Section>
 
 <script>
-    const steps = document.querySelectorAll<HTMLElement>("[data-step]")
-    const dots = document.querySelectorAll<HTMLElement>("[data-dot]")
-    const images = document.querySelectorAll<HTMLElement>("[data-process-image]")
-    const content = document.getElementById("process-content")
-    const dataElement = document.getElementById("process-data")
+  const steps = document.querySelectorAll(".step");
 
-    if (!content || !dataElement?.textContent) {
-    console.error("Required elements not found")
-    throw new Error("Process section elements missing")
-    }
-
-    const data = JSON.parse(dataElement.textContent)
-    let activeStep = 0
-
-    function setStep(index: number) {
-    if (index === activeStep || !content) return
-    
-    // Fade out current
-    images[activeStep]?.classList.add("opacity-0")
-    content.classList.add("opacity-0")
-    
-    setTimeout(() => {
-        if (!content) return
-        
-        const h2 = content.querySelector("h2")
-        const p = content.querySelector("p")
-        
-        if (h2) h2.textContent = data[index].title
-        if (p) p.textContent = data[index].description
-        
-        dots.forEach((dot, i) => {
-        dot.classList.toggle("bg-primary-blue-500", i <= index)
-        dot.classList.toggle("border", i > index)
-        
-        const span = dot.querySelector("span")
-        if (span) {
-            span.classList.toggle("text-surface", i <= index)
-            span.classList.toggle("text-primary-blue-900", i > index)
-        }
-        })
-        
-        // Fade in new
-        images[index]?.classList.remove("opacity-0")
-        content.classList.remove("opacity-0")
-        
-        activeStep = index
-    }, 300)
-    }
-
-    const observer = new IntersectionObserver(
+  const observer = new IntersectionObserver(
     (entries) => {
-        entries.forEach((entry) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            const target = entry.target as HTMLElement
-            setStep(Number(target.dataset.step))
+          steps.forEach((s) =>
+            s.classList.replace("opacity-100", "opacity-10"),
+          );
+          entry.target.classList.replace("opacity-10", "opacity-100");
         }
-        })
+      });
     },
-    { threshold: 0.6 }
-    )
+    { threshold: 0.8 },
+  );
 
-    steps.forEach((el) => observer.observe(el))
+  steps.forEach((step) => observer.observe(step));
 </script>
