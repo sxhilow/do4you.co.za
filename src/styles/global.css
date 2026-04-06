@@ -42,13 +42,13 @@
   --color-neutral-12: #313633;
   --color-neutral-13: #1f2421;
 
-  --animate-fade-in-from-top: fade-in-from-top 0.3s ease-out;
+  --animate-fade-in-from-top: fade-in-from-top 0.5s ease-out;
   --animate-fade-out-from-top: fade-out-from-top 0.3s ease-out;
 
   @keyframes fade-in-from-top {
     0% {
       opacity: 0;
-      transform: translateY(-8px);
+      transform: translateY(-16px);
     }
 
     100% {
