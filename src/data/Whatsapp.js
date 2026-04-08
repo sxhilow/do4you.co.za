@@ -1,5 +1,5 @@
 const phoneNumber = "27689029543";
-const message = "Hi, I need help with my visa application form!";
+const message = "Hi, I need help with my...";
 
 export const whatsappData = {
   phoneNumber,
