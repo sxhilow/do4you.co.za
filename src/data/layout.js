@@ -12,7 +12,7 @@ export const headerData = {
     { href: "#", label: "Home" },
     { href: "#services", label: "Services" },
     { href: "#process", label: "Process" },
-    { href: "#work", label: "Work" },
+    { href: "#reviews", label: "Reviews" },
   ],
   cta: {
     label: "Contact us",
