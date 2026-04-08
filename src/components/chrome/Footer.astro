@@ -5,7 +5,7 @@ import Button from "../ui/Button.astro";
 const { logo, tagline, copyright, quickLinks = [] } = Astro.props;
 ---
 
-<footer class="">
+<footer class="max-w-[1350px] mx-auto px-5 py-8 lg:py-16">
     <div
         class="flex max-md:flex-col max-md:gap-8 justify-between items-start lg:px-5"
     >
@@ -39,10 +39,9 @@ const { logo, tagline, copyright, quickLinks = [] } = Astro.props;
     <div class="mt-10">
         <hr class="text-blue-700" />
 
-        <div class="flex flex-col justify-center items-center gap-1">
+        <div class="flex flex-col justify-center items-center gap-2">
             <p class="block text-neutral-5 text-sm font-light text-center">
-                ** Do4You is not affiliated with VFS or Home Affairs. Services
-                are for guidance and form assistance only. **
+                Do4You is an independent service. We are not part of VFS Global or Home Affairs — we simply help you complete your forms correctly.
             </p>
             <p class="text-neutral-5">
                 <Button
